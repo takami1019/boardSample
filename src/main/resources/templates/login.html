@@ -1,0 +1,50 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="https://www.thymeleaf.org"
+	xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+	<head>
+		<title>ログイン画面</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+			rel="stylesheet">
+	</head>
+	<body class="container">
+		<h1 class="display-4 mb-4">ログイン画面</h1>
+		<p th:text="${msg}"></p>
+		<form th:action="@{/login}" method="post">
+			<div class="mb-3">
+				<label class="form-label">ユーザ名</label>
+				<input type="text" required name="username"
+				class="form-control">
+			</div>
+			<div class="mb-3">
+				<label class="form-label">パスワード</label>
+				<input type="password" required name="password"
+				class="form-control">
+			</div>
+			<div class="mb-3">
+				<input type="submit" value="ログイン"
+				class="btn btn-primary">
+			</div>
+		</form>
+		<br>
+		<div class="row">
+		<div class="col-4">
+		<p class="fs-4">テストユーザアカウント</p>
+		<p>ユーザID ： user</p>
+		<p>パスワード ： password</p>
+		</div>
+		<br>
+		<div class="col-4">
+		<p class="fs-4">管理者アカウント</p>
+		<p>ユーザID ： admin</p>
+		<p>パスワード ： password</p>
+		</div>
+		</div>
+		<br>
+		<br>
+		<p>新規ユーザ登録は<a th:href="@{/register}">こちら</a></p>
+		<br>
+		<p><a th:href="@{/}">トップページに戻る</a></p>
+	</body>
+</html>
