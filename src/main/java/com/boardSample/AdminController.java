@@ -1,20 +1,20 @@
 package com.boardSample;
 
+import java.util.Calendar;
 import java.util.List;
 import java.util.Optional;
-import java.util.Calendar;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.annotation.Validated;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
-import org.springframework.security.core.annotation.AuthenticationPrincipal;
-import org.springframework.security.core.userdetails.UserDetails;
 
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
@@ -66,7 +66,7 @@ public class AdminController {
 		  res= new ModelAndView("redirect:/secret");
 	  }else {
 		  mav.setViewName("secret");
-		  mav.addObject("msg","投稿エラー");
+		  mav.addObject("msg","投稿エラーです。");
 		  mav.addObject("title","サンプル掲示板");
 		  List<Message> list =(List<Message>)repository.findAll();
 		  mav.addObject("data",list);

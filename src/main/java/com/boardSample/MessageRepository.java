@@ -10,3 +10,5 @@ public interface MessageRepository extends JpaRepository<Message,Long>{
 	public Optional<Message> findById(Long id);
 	
 }
+
+
