@@ -8,56 +8,57 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
-
 import jakarta.validation.constraints.NotBlank;
 
-
 @Entity
-@Table(name="msgdata")
+@Table(name = "msgdata")
 public class Message {
 
 	@Id
-	@GeneratedValue(strategy =GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column
 	private long id;
-	
-	@Column(nullable=true)
+
+	@Column(nullable = true)
 	private String userName;
-	
-	@Column(nullable=true)
+
+	@Column(nullable = true)
 	@NotBlank
 	private String content;
-	
-	@Column(nullable=true)
+
+	@Column(nullable = true)
 	private Date datetime;
-	
-	
+
 	public long getId() {
-	return id;
+		return id;
 	}
+
 	public void setId(long id) {
-		this.id=id;
+		this.id = id;
 	}
-	
+
 	public Date getDatetime() {
 		return datetime;
 	}
+
 	public void setDatetime(Date datetime) {
-		this.datetime=datetime;
+		this.datetime = datetime;
 	}
-		
+
 	public String getContent() {
 		return content;
 	}
+
 	public void setContent(String content) {
-		this.content=content;
+		this.content = content;
 	}
-							
+
 	public String getUserName() {
 		return userName;
 	}
+
 	public void setUserName(String userName) {
-		this.userName=userName;
+		this.userName = userName;
 	}
-	
+
 }
