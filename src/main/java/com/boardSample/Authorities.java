@@ -1,37 +1,34 @@
 package com.boardSample;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
-
 @Entity
-@Table(name="AUTHORITIES")
+@Table(name = "AUTHORITIES")
 public class Authorities {
 
-
-	
 	@Id
-	@Column(name="USERNAME",length =50,nullable=false)
+	@Column(name = "USERNAME", length = 50, nullable = false)
 	private String userId;
-	
-	private String authority;
-	
 
-	
+	private String authority;
+
 	public String getUserId() {
 		return userId;
 	}
+
 	public void setUserId(String userId) {
-		this.userId=userId;
+		this.userId = userId;
 	}
-		
+
 	public String getAuthority() {
 		return authority;
 	}
+
 	public void setAuthority(String authority) {
-		this.authority=authority;
+		this.authority = authority;
 	}
-	
-	
+
 }
